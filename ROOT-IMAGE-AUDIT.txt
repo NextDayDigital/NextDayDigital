@@ -1,0 +1,31 @@
+ROOT IMAGE PATH AUDIT
+
+All 17 supplied HTML files checked.
+Original HTML image references already used same-folder filenames; no images/ or assets/ image directories were found.
+Updated local image attributes and inline CSS image URLs to explicit /filename paths for nextdaydigital.org.
+Social image URLs use https://nextdaydigital.org/filename.
+Bakery and fitness video posters restored to /black.png as previously requested.
+Video sources, content, navigation and external stylesheet/script links otherwise preserved.
+
+IMPORTANT: Keep black.png in the website root. It was not in the earlier repository list.
+External CSS and JavaScript were not uploaded, so their image references and dynamically loaded images could not be checked.
+Image files were not supplied; filename checks use the repository list, not live image availability.
+Root-absolute paths target the custom domain root, not a GitHub project subdirectory.
+
+themes.html: 12 HTML image references checked
+404.html: 1 HTML image references checked
+auto.html: 6 HTML image references checked
+bakery.html: 9 HTML image references checked
+contractor.html: 6 HTML image references checked
+fitness.html: 7 HTML image references checked
+index.html: 6 HTML image references checked
+landscape.html: 6 HTML image references checked
+professional.html: 3 HTML image references checked
+restaurant.html: 6 HTML image references checked
+restaurant-about.html: 5 HTML image references checked
+restaurant-contact.html: 2 HTML image references checked
+restaurant-menu.html: 2 HTML image references checked
+restaurant-private-dining.html: 5 HTML image references checked
+restaurant-reservations.html: 2 HTML image references checked
+restaurant-wine.html: 2 HTML image references checked
+salon.html: 6 HTML image references checked
