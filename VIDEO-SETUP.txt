@@ -1,0 +1,13 @@
+Replace the nine matching HTML files in your repository root. Keep existing images, CSS and JavaScript. Videos are not included.
+
+auto.html: video auto-b-roll.mp4; fallback auto.jpg
+landscape.html: video landscape-b-roll.mp4; fallback landscape.jpg
+salon.html: video salon-b-roll.mp4; fallback salon.jpg
+contractor.html: video contractor-b-roll.mp4; fallback contractor.jpg
+professional.html: video professional-b-roll.mp4; fallback professional.jpg
+bakery.html: video bakery-b-roll.mp4; fallback black.png
+fitness.html: video fitness-b-roll.mp4; fallback black.png
+index.html: video nextday-b-roll.mp4; fallback landscape.jpg
+restaurant.html: video Restaurant-Home-Video.mp4; fallback restaurant-video-fallback.png
+
+Fallback stays visible until playback starts and remains if the video is missing or fails. Bakery and fitness retain black.png. Auto gallery fixes retained. Static references verified; live browser playback not tested.

@@ -11,12 +11,12 @@
 <meta content="website" property="og:type"/>
 <meta content="Granite Ridge · contractor website concept by NextDay Digital" property="og:title"/>
 <meta content="Contractor website concept: licensing and insurance badges, service detail, financing options, project gallery, reviews and a photo-led estimate request." property="og:description"/>
-<meta content="https://nextdaydigital.org/contractor.jpg" property="og:image"/>
+<meta content="contractor.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23f3f5f7'/%3E%3C/svg%3E" rel="icon"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link as="image" fetchpriority="high" href="/contractor.jpg" rel="preload"/>
+<link as="image" fetchpriority="high" href="contractor.jpg" rel="preload"/>
 <link href="base.css" rel="stylesheet"/>
 <link href="theme-contractor.css" rel="stylesheet"/>
 <link href="theme-fx.css" rel="stylesheet"/>
@@ -25,7 +25,7 @@
 try{s=localStorage.getItem('ndd-mode')}catch(e){}
 h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='light')?s:h.getAttribute('data-default'))||'light'))})();
 </script>
-<link href="site-upgrades.css" id="ndd-upgrade-css" rel="stylesheet"/></head>
+<link href="site-upgrades.css" id="ndd-upgrade-css" rel="stylesheet"/><style id="ndd-video-style">.hero.ndd-video-hero{position:relative;isolation:isolate;overflow:hidden;background:#000}.hero.ndd-video-hero>.ndd-fallback,.hero.ndd-video-hero>.ndd-video{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;pointer-events:none;z-index:0}.hero.ndd-video-hero>.ndd-fallback{display:block;opacity:1;visibility:visible}.hero.ndd-video-hero>.ndd-video{display:block;opacity:0;visibility:hidden}.hero.ndd-video-hero.video-ready>.ndd-video{opacity:1;visibility:visible}.hero.ndd-video-hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#000a,#0004);pointer-events:none}.hero.ndd-video-hero>.hero-inner{position:relative;z-index:2}.hero.ndd-video-hero>.ndd-toggle{position:absolute;right:18px;bottom:18px;z-index:3;background:#000a;color:white;border:1px solid #fff9;padding:9px 14px;border-radius:6px;font:inherit;cursor:pointer}.ndd-toggle[hidden]{display:none!important}.ndd-toggle:focus-visible{outline:3px solid white;outline-offset:3px}</style></head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div aria-hidden="true" class="bartop" id="prog"></div>
@@ -43,8 +43,8 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 <div class="wrap"><a href="#services">Services</a><a href="#financing">Financing</a><a href="#credentials">Credentials</a><a href="#projects">Project gallery</a><a href="#contact">Free estimate</a></div>
 </nav>
 <main id="main">
-<section class="hero">
-<img alt="Modern home exterior at dusk with stone and timber cladding" decoding="async" fetchpriority="high" height="1200" src="/contractor.jpg" width="1800"/>
+<section class="hero ndd-video-hero"><img alt="" aria-hidden="true" class="ndd-fallback" fetchpriority="high" src="/contractor.jpg"/><video aria-hidden="true" autoplay="" class="ndd-video" id="ndd-video" loop="" muted="" playsinline="" poster="/contractor.jpg" preload="metadata" tabindex="-1"><source src="/contractor-b-roll.mp4" type="video/mp4"/></video>
+
 <div class="hero-inner">
 <span class="kicker">Roofing · Siding · Gutters</span>
 <h1>Done right.<br/>Done once.</h1>
@@ -55,7 +55,7 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 </div>
 <p class="hero-meta">Licensed &amp; insured  ·  Free written estimates  ·  Storm response same day</p>
 </div>
-</section>
+<button aria-controls="ndd-video" class="ndd-toggle" hidden="" type="button">Play video</button></section>
 <section class="section-sm"><div class="wrap">
 <div class="badge-strip reveal">
 <div class="badge"><b>Licensed &amp; insured</b><span>Documents sent with every estimate</span></div>
@@ -129,9 +129,9 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 <section class="section tint" id="projects"><div class="wrap">
 <div class="sec-head reveal"><div><span class="kicker">Recent work</span><h2>Around the county</h2></div></div>
 <div class="mosaic reveal" style="grid-template-rows:250px 250px">
-<div class="shot"><img alt="Completed roof replacement" height="1200" loading="lazy" src="/contractor.jpg" width="1800"/></div>
-<div class="shot"><img alt="New siding installation" height="1200" loading="lazy" src="/contractor.jpg" width="1800"/></div>
-<div class="shot"><img alt="Seamless gutter run" height="1200" loading="lazy" src="/contractor.jpg" width="1800"/></div>
+<div class="shot"><img alt="Completed roof replacement" height="1200" loading="lazy" src="contractor.jpg" width="1800"/></div>
+<div class="shot"><img alt="New siding installation" height="1200" loading="lazy" src="contractor.jpg" width="1800"/></div>
+<div class="shot"><img alt="Seamless gutter run" height="1200" loading="lazy" src="contractor.jpg" width="1800"/></div>
 </div>
 <div class="g3 reveal" style="margin-top:26px">
 <div><h3>Ridgeview</h3><p class="muted-sm">Full tear-off, architectural shingle, ventilation corrected. Four days.</p></div>
@@ -177,5 +177,5 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 </div>
 <script src="app.js"></script>
 <script src="theme-fx.js"></script>
-<script src="site-upgrades.js"></script></body>
+<script src="site-upgrades.js"></script><script id="ndd-video-script">(function(){document.querySelectorAll('.ndd-video-hero').forEach(function(h){var v=h.querySelector('video'),b=h.querySelector('.ndd-toggle'),m=matchMedia('(prefers-reduced-motion: reduce)'),failed=false;function label(){b.textContent=v.paused?'Play video':'Pause video'}function hide(){h.classList.remove('video-ready');b.hidden=true}function fail(){failed=true;v.pause();hide()}function play(){if(failed)return;v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){hide();if(!failed){b.hidden=false;label()}})}v.addEventListener('playing',function(){h.classList.add('video-ready');b.hidden=false;label()});v.addEventListener('pause',label);v.addEventListener('error',fail);v.querySelector('source').addEventListener('error',fail);b.addEventListener('click',function(){if(v.paused)play();else v.pause()});function preference(){if(m.matches){v.pause();hide();if(!failed){b.hidden=false;label()}}else play()}if(m.addEventListener)m.addEventListener('change',preference);v.muted=true;preference()})})();</script></body>
 </html>

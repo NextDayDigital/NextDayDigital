@@ -25,7 +25,7 @@
 try{s=localStorage.getItem('ndd-mode')}catch(e){}
 h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='light')?s:h.getAttribute('data-default'))||'light'))})();
 </script>
-<link href="site-upgrades.css" id="ndd-upgrade-css" rel="stylesheet"/></head>
+<link href="site-upgrades.css" id="ndd-upgrade-css" rel="stylesheet"/><style id="ndd-video-style">.hero.ndd-video-hero{position:relative;isolation:isolate;overflow:hidden;background:#000}.hero.ndd-video-hero>.ndd-fallback,.hero.ndd-video-hero>.ndd-video{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;pointer-events:none;z-index:0}.hero.ndd-video-hero>.ndd-fallback{display:block;opacity:1;visibility:visible}.hero.ndd-video-hero>.ndd-video{display:block;opacity:0;visibility:hidden}.hero.ndd-video-hero.video-ready>.ndd-video{opacity:1;visibility:visible}.hero.ndd-video-hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#000a,#0004);pointer-events:none}.hero.ndd-video-hero>.hero-inner{position:relative;z-index:2}.hero.ndd-video-hero>.ndd-toggle{position:absolute;right:18px;bottom:18px;z-index:3;background:#000a;color:white;border:1px solid #fff9;padding:9px 14px;border-radius:6px;font:inherit;cursor:pointer}.ndd-toggle[hidden]{display:none!important}.ndd-toggle:focus-visible{outline:3px solid white;outline-offset:3px}</style></head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div aria-hidden="true" class="bartop" id="prog"></div>
@@ -43,8 +43,8 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 <div class="wrap"><a href="#packages">Packages</a><a href="#coating">Coating lab</a><a href="#correction">Correction levels</a><a href="#correction">Results gallery</a><a href="#contact">Book a bay</a></div>
 </nav>
 <main id="main">
-<section class="hero">
-<img alt="Dark blue sports car under studio lighting" decoding="async" fetchpriority="high" height="1200" src="auto.jpg" width="1800"/>
+<section class="hero ndd-video-hero"><img alt="" aria-hidden="true" class="ndd-fallback" fetchpriority="high" src="/auto.jpg"/><video aria-hidden="true" autoplay="" class="ndd-video" id="ndd-video" loop="" muted="" playsinline="" poster="/auto.jpg" preload="metadata" tabindex="-1"><source src="/auto-b-roll.mp4" type="video/mp4"/></video>
+
 <div class="hero-inner">
 <span class="kicker">Paint correction · Ceramic coating</span>
 <h1>Good cars.<br/>Extraordinary finish.</h1>
@@ -55,7 +55,7 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 </div>
 <p class="hero-meta">By appointment only  ·  Interior · Paint · Protection</p>
 </div>
-</section>
+<button aria-controls="ndd-video" class="ndd-toggle" hidden="" type="button">Play video</button></section>
 <section class="bar"><div class="wrap"><div class="bar-cell"><b>2 bays</b><span>Never more than four cars a week</span></div><div class="bar-cell"><b>5600K</b><span>Colour-corrected inspection lighting</span></div><div class="bar-cell"><b>5 years</b><span>Longest coating warranty offered</span></div><div class="bar-cell"><b>Deposit</b><span>Secures the bay, comes off the bill</span></div></div></section>
 <section class="section" id="packages"><div class="wrap">
 <div class="sec-head reveal">
@@ -182,5 +182,5 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 </div>
 <script src="app.js"></script>
 <script src="theme-fx.js"></script>
-<script src="site-upgrades.js"></script></body>
+<script src="site-upgrades.js"></script><script id="ndd-video-script">(function(){document.querySelectorAll('.ndd-video-hero').forEach(function(h){var v=h.querySelector('video'),b=h.querySelector('.ndd-toggle'),m=matchMedia('(prefers-reduced-motion: reduce)'),failed=false;function label(){b.textContent=v.paused?'Play video':'Pause video'}function hide(){h.classList.remove('video-ready');b.hidden=true}function fail(){failed=true;v.pause();hide()}function play(){if(failed)return;v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){hide();if(!failed){b.hidden=false;label()}})}v.addEventListener('playing',function(){h.classList.add('video-ready');b.hidden=false;label()});v.addEventListener('pause',label);v.addEventListener('error',fail);v.querySelector('source').addEventListener('error',fail);b.addEventListener('click',function(){if(v.paused)play();else v.pause()});function preference(){if(m.matches){v.pause();hide();if(!failed){b.hidden=false;label()}}else play()}if(m.addEventListener)m.addEventListener('change',preference);v.muted=true;preference()})})();</script></body>
 </html>
