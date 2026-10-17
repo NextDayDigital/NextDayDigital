@@ -20,7 +20,16 @@
 <link href="base.css" rel="stylesheet"/>
 <link href="theme-restaurant.css?v=3" rel="stylesheet"/>
 <link href="theme-fx.css" rel="stylesheet"/>
-
+<style id="restaurant-responsive-video-css">
+.hero-video{position:relative;overflow:hidden;background:#17130f;isolation:isolate}
+.hero-video-bg{position:absolute;inset:0;z-index:-3;width:100%;height:100%;display:block;object-fit:cover;object-position:center;pointer-events:none;background:transparent}
+.hero-video-fallback{position:absolute;inset:0;z-index:-4;background:url("restaurant-video-fallback.png") center/cover no-repeat}
+.hero-video::after{z-index:-1}
+.hero-video-bg::-webkit-media-controls{display:none!important}
+.hero-video-bg::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none}
+.hero-video-bg::-webkit-media-controls-overlay-play-button{display:none!important}
+@media(max-width:767px){.hero-video-bg{object-position:center center}}
+</style>
 <script>
 (function(){var h=document.documentElement,u=new URLSearchParams(location.search).get('mode'),s=null;
 try{s=localStorage.getItem('ndd-mode')}catch(e){}
@@ -30,7 +39,57 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 <link href="restaurant-menu-live.css" rel="stylesheet"/>
 <link href="restaurant-extras.css" rel="stylesheet"/>
 <link href="restaurant-cursor.css" rel="stylesheet"/>
-<style id="ndd-video-style">.hero.ndd-video-hero{position:relative;isolation:isolate;overflow:hidden;background:#000}.hero.ndd-video-hero>.ndd-fallback,.hero.ndd-video-hero>.ndd-video{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;pointer-events:none;z-index:0}.hero.ndd-video-hero>.ndd-fallback{display:block;opacity:1;visibility:visible}.hero.ndd-video-hero>.ndd-video{display:block;opacity:0;visibility:hidden}.hero.ndd-video-hero.video-ready>.ndd-video{opacity:1;visibility:visible}.hero.ndd-video-hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#000a,#0004);pointer-events:none}.hero.ndd-video-hero>.hero-inner{position:relative;z-index:2}.hero.ndd-video-hero>.ndd-toggle{position:absolute;right:18px;bottom:18px;z-index:3;background:#000a;color:white;border:1px solid #fff9;padding:9px 14px;border-radius:6px;font:inherit;cursor:pointer}.ndd-toggle[hidden]{display:none!important}.ndd-toggle:focus-visible{outline:3px solid white;outline-offset:3px}</style></head>
+<style id="restaurant-signature-mobile-css">
+/* Signature-card image sizing: consistent desktop crop and mobile-safe layout. */
+#signatures .hv-sig-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 24px);
+}
+
+#signatures .hv-sig {
+  min-width: 0;
+  overflow: hidden;
+}
+
+#signatures .hv-sig > img {
+  display: block;
+  width: 100%;
+  height: clamp(360px, 48vw, 720px);
+  object-fit: cover;
+  object-position: center;
+}
+
+#signatures .hv-sig figcaption {
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  #signatures .sec-head {
+    display: block;
+  }
+
+  #signatures .sec-head .lede {
+    margin-top: 12px;
+  }
+
+  #signatures .hv-sig-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  #signatures .hv-sig > img {
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #signatures .hv-sig figcaption {
+    padding: 16px;
+  }
+}
+</style></head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div aria-hidden="true" class="bartop" id="prog"></div>
@@ -44,8 +103,8 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 <div class="drawer" id="drawer"><a aria-current="page" href="restaurant.html">Home</a><a href="restaurant-menu.html">Menu</a><a href="restaurant-wine.html">Wine List</a><a href="restaurant-private-dining.html">Private Dining</a><a href="restaurant-about.html">Our Story</a><a href="restaurant-contact.html">Contact</a><a href="restaurant-reservations.html">Reserve a table</a><a href="themes.html">← All website themes</a></div>
 </div>
 </header>
-<main id="main"><section class="hero ndd-video-hero"><img alt="" aria-hidden="true" class="ndd-fallback" fetchpriority="high" src="/restaurant-video-fallback.png"/><video aria-hidden="true" autoplay="" class="ndd-video" id="ndd-video" loop="" muted="" playsinline="" poster="/restaurant-video-fallback.png" preload="metadata" tabindex="-1"><source src="/Restaurant-Home-Video.mp4" type="video/mp4"/></video>
-
+<main id="main"><section class="hero hero-video" data-video-hero="">
+<video aria-hidden="true" autoplay="" class="hero-video-bg" controlslist="nodownload noplaybackrate noremoteplayback" disablepictureinpicture="" loop="" muted="" playsinline="" poster="restaurant-video-fallback.png" preload="auto" tabindex="-1" webkit-playsinline=""></video><div aria-hidden="true" class="hero-video-fallback"></div>
 <div class="hero-inner">
 <span class="kicker">Seasonal American · Est. 2014</span>
 <h1>A table worth<br/>staying at.</h1>
@@ -56,13 +115,13 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 </div>
 <p class="hero-meta">Dinner Tuesday–Sunday  ·  Private dining for 10–52</p>
 </div>
-<button aria-controls="ndd-video" class="ndd-toggle" hidden="" type="button">Play video</button></section><section class="bar"><div class="wrap"><div class="bar-cell"><b>Seasonal</b><span>Menu rewritten every few weeks</span></div><div class="bar-cell"><b>Four courses</b><span>Or order à la carte</span></div><div class="bar-cell"><b>180 bottles</b><span>Coastal and old-world list</span></div><div class="bar-cell"><b>Walk-ins</b><span>Welcome at the bar</span></div></div></section><section class="section tint" id="signatures"><div class="wrap">
+</section><section class="bar"><div class="wrap"><div class="bar-cell"><b>Seasonal</b><span>Menu rewritten every few weeks</span></div><div class="bar-cell"><b>Four courses</b><span>Or order à la carte</span></div><div class="bar-cell"><b>180 bottles</b><span>Coastal and old-world list</span></div><div class="bar-cell"><b>Walk-ins</b><span>Welcome at the bar</span></div></div></section><section class="section tint" id="signatures"><div class="wrap">
 <div class="sec-head reveal"><div><span class="kicker">From the pass</span><h2>Three plates people come back for</h2></div>
 <p class="lede">Photographed at service, not in a studio.</p></div>
 <div class="hv-sig-grid">
-<figure class="hv-sig reveal"><img alt="Seared steak sliced medium-rare beside a herb and grain salad" decoding="async" height="944" loading="lazy" src="restaurant-scallops.jpg" width="1115"/><figcaption><b>Hanger steak</b><span>Charred over oak, farro, parmesan, salsa verde</span></figcaption></figure>
-<figure class="hv-sig reveal" style="--d:110ms"><img alt="Two seared scallops with thyme on wilted greens" decoding="async" height="1024" loading="lazy" src="restaurant-pasta.jpg" width="1052"/><figcaption><b>Day-boat scallops</b><span>Brown butter, braised greens, chili jam</span></figcaption></figure>
-<figure class="hv-sig reveal" style="--d:220ms"><img alt="Roasted fish over vegetables with red wine in a candlelit dining room" decoding="async" height="941" loading="lazy" src="restaurant-steak.jpg" width="1672"/><figcaption><b>Market fish</b><span>Roasted root vegetables, micro herbs, pan jus</span></figcaption></figure>
+<figure class="hv-sig reveal"><img alt="Seared steak with a browned crust, sliced to show the center, served with a composed side" decoding="async" height="941" loading="lazy" src="restaurant-steak.jpg" width="1672"/><figcaption><b>Hanger steak</b><span>Charred over oak, farro, parmesan, salsa verde</span></figcaption></figure>
+<figure class="hv-sig reveal" style="--d:110ms"><img alt="Seared scallops with browned surfaces, herbs and greens on a dark plate" decoding="async" height="944" loading="lazy" src="restaurant-scallops.jpg" width="1115"/><figcaption><b>Day-boat scallops</b><span>Brown butter, braised greens, chili jam</span></figcaption></figure>
+<figure class="hv-sig reveal" style="--d:220ms"><img alt="Ribbon pasta with grated cheese, herbs and shaved truffle on a dark plate" decoding="async" height="1024" loading="lazy" src="restaurant-pasta.jpg" width="1052"/><figcaption><b>Truffle tagliatelle</b><span>Brown butter, parmesan, herbs, shaved truffle</span></figcaption></figure>
 </div></div></section><section class="section" id="menu"><div class="wrap">
 <div class="sec-head reveal">
 <div><span class="kicker">The menu</span><h2>This week at the pass</h2></div>
@@ -98,10 +157,10 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 <a class="dock-exit" href="themes.html">← Themes</a>
 </div>
 <script src="app.js?v=3"></script>
-
+<script src="restaurant-video.js"></script>
 <script src="theme-fx.js"></script>
 <script src="restaurant-menu-live.js"></script>
 <script src="site-upgrades.js"></script>
 <script src="restaurant-cursor.js"></script>
-<script id="ndd-video-script">(function(){document.querySelectorAll('.ndd-video-hero').forEach(function(h){var v=h.querySelector('video'),b=h.querySelector('.ndd-toggle'),m=matchMedia('(prefers-reduced-motion: reduce)'),failed=false;function label(){b.textContent=v.paused?'Play video':'Pause video'}function hide(){h.classList.remove('video-ready');b.hidden=true}function fail(){failed=true;v.pause();hide()}function play(){if(failed)return;v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){hide();if(!failed){b.hidden=false;label()}})}v.addEventListener('playing',function(){h.classList.add('video-ready');b.hidden=false;label()});v.addEventListener('pause',label);v.addEventListener('error',fail);v.querySelector('source').addEventListener('error',fail);b.addEventListener('click',function(){if(v.paused)play();else v.pause()});function preference(){if(m.matches){v.pause();hide();if(!failed){b.hidden=false;label()}}else play()}if(m.addEventListener)m.addEventListener('change',preference);v.muted=true;preference()})})();</script></body>
+</body>
 </html>
