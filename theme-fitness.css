@@ -92,4 +92,4 @@ h4{font-family:var(--font-ui);text-transform:uppercase;letter-spacing:.07em;font
 .section>.wrap>.sec-head{border-left:8px solid var(--accent);padding-left:24px}
 .card{background:linear-gradient(135deg,var(--surface),var(--bg));transform:skewX(-1.5deg)}
 .card>*{transform:skewX(1.5deg)}
-@media(max-width:860px){.concept-tabs--fitness a{flex:none}.hero{--hero-mobile-pos:58% 50%}.hero h1{--h1-mobile:clamp(48px,15vw,68px)}}
+@media(max-width:860px){.concept-tabs--fitness a{flex:none}.hero{--hero-mobile-pos:58% 50%}.hero h1{max-width:none;font-size:clamp(44px,13vw,64px);line-height:.9;overflow-wrap:normal;word-break:normal;hyphens:none}.hero h1 em{white-space:nowrap}}

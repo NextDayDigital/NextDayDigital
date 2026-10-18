@@ -293,7 +293,7 @@ hr{border:0;border-top:1px solid var(--line);margin:0}
   .concept-tabs .wrap{width:100%;padding-inline:5%;}
 }
 @media(max-width:560px){
-  .hero h1{font-size:var(--h1-mobile,clamp(38px,12vw,56px));overflow-wrap:anywhere}
+  .hero h1{font-size:var(--h1-mobile,clamp(38px,12vw,56px));overflow-wrap:normal;word-break:normal;hyphens:none}
 }
 
 
