@@ -16,14 +16,14 @@
 <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23faf7f1'/%3E%3C/svg%3E" rel="icon"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link as="image" fetchpriority="high" href="restaurant.jpg" rel="preload"/>
+<link as="image" fetchpriority="high" href="restaurant-video-fallback.jpg" rel="preload"/>
 <link href="base.css" rel="stylesheet"/>
 <link href="theme-restaurant.css?v=3" rel="stylesheet"/>
 <link href="theme-fx.css" rel="stylesheet"/>
 <style id="restaurant-responsive-video-css">
 .hero-video{position:relative;overflow:hidden;background:#17130f;isolation:isolate}
 .hero-video-bg{position:absolute;inset:0;z-index:-3;width:100%;height:100%;display:block;object-fit:cover;object-position:center;pointer-events:none;background:transparent}
-.hero-video-fallback{position:absolute;inset:0;z-index:-4;background:url("restaurant-video-fallback.png") center/cover no-repeat}
+.hero-video-fallback{position:absolute;inset:0;z-index:-4;background:url("restaurant-video-fallback.jpg") center/cover no-repeat}
 .hero-video::after{z-index:-1}
 .hero-video-bg::-webkit-media-controls{display:none!important}
 .hero-video-bg::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none}
@@ -104,7 +104,7 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 </div>
 </header>
 <main id="main"><section class="hero hero-video" data-video-hero="">
-<video aria-hidden="true" autoplay="" class="hero-video-bg" controlslist="nodownload noplaybackrate noremoteplayback" disablepictureinpicture="" loop="" muted="" playsinline="" poster="restaurant-video-fallback.png" preload="auto" tabindex="-1" webkit-playsinline=""></video><div aria-hidden="true" class="hero-video-fallback"></div>
+<video aria-hidden="true" autoplay="" class="hero-video-bg" controlslist="nodownload noplaybackrate noremoteplayback" disablepictureinpicture="" loop="" muted="" playsinline="" poster="restaurant-video-fallback.jpg" preload="auto" tabindex="-1" webkit-playsinline=""></video><div aria-hidden="true" class="hero-video-fallback"></div>
 <div class="hero-inner">
 <span class="kicker">Seasonal American · Est. 2014</span>
 <h1>A table worth<br/>staying at.</h1>
