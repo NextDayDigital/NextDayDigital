@@ -31,7 +31,7 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 {"@type":"ListItem","position":2,"name":"Website themes","item":"https://nextdaydigital.digital/themes.html"}]}
 </script>
 <link href="site-upgrades.css" id="ndd-upgrade-css" rel="stylesheet"/>
-</head>
+<style id="ndd-mobile-mode-btn">.mode-btn--mobile{display:none}@media(max-width:1100px){.mode-btn--mobile{display:grid;margin-left:auto;margin-right:-12px}}</style></head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div aria-hidden="true" class="bartop" id="prog"></div>
@@ -47,6 +47,7 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 <button aria-label="Switch colour mode" class="mode-btn" data-toggle-mode="" type="button">☽</button>
 <a class="btn btn-sm" href="index.html#start">Start a project</a>
 </div>
+<button aria-label="Switch colour mode" class="mode-btn mode-btn--mobile" type="button">☽</button>
 <button aria-controls="drawer" aria-expanded="false" aria-label="Menu" class="burger" id="burger"><i></i><i></i><i></i></button>
 </nav>
 <div class="drawer" id="drawer">
@@ -280,5 +281,5 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 </div>
 <script src="app.js"></script>
 <script src="theme-fx.js"></script>
-<script src="site-upgrades.js"></script></body>
+<script src="site-upgrades.js"></script><script id="ndd-mobile-mode-script">(function(){var m=document.querySelector(".mode-btn--mobile"),d=document.querySelector(".menu [data-toggle-mode]");if(!m||!d)return;function sync(){m.textContent=d.textContent}sync();m.addEventListener("click",function(){d.click();setTimeout(sync,0)})})();</script></body>
 </html>
