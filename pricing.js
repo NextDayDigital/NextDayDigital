@@ -6,11 +6,14 @@
   if (!cfg) return;
 
   var plans = Array.isArray(cfg.plans) ? cfg.plans : [];
-  var fee = cfg.websiteFee || null;
-  var primaryUrl = '';
-  plans.forEach(function (plan) {
-    if (plan && plan.primary && !primaryUrl) primaryUrl = safeUrl(plan.checkoutUrl);
-  });
+  var site = cfg.website || null;
+  // "Get started" = the $499 one-time website link (monthly plans are optional).
+  var primaryUrl = site ? safeUrl(site.checkoutUrl) : '';
+  if (!primaryUrl) {
+    plans.forEach(function (plan) {
+      if (plan && plan.primary && !primaryUrl) primaryUrl = safeUrl(plan.checkoutUrl);
+    });
+  }
 
   document.querySelectorAll('[data-pricing-cta="primary"]').forEach(function (el) {
     if (!primaryUrl) return;
@@ -45,27 +48,43 @@
 
   if (included) {
     included.textContent = '';
-    if (fee && (fee.amount || (fee.features && fee.features.length))) {
-      included.appendChild(includedCard(fee));
+    if (site && (site.amount || (site.features && site.features.length))) {
+      included.appendChild(websiteCard(site));
     }
   }
 
   if (!root) return;
   root.textContent = '';
+  if (plans.length && cfg.plansHeading && !document.getElementById('pricing-plans-head')) {
+    var head = document.createElement('div');
+    head.id = 'pricing-plans-head';
+    head.className = 'reveal';
+    head.style.margin = '40px 0 16px';
+    var h = document.createElement('h3');
+    h.textContent = cfg.plansHeading;
+    head.appendChild(h);
+    if (cfg.plansLede) {
+      var pl = document.createElement('p');
+      pl.className = 'muted-sm';
+      pl.textContent = cfg.plansLede;
+      head.appendChild(pl);
+    }
+    root.parentNode.insertBefore(head, root);
+  }
   plans.forEach(function (plan, index) {
-    root.appendChild(planCard(plan, fee, index));
+    root.appendChild(planCard(plan, index));
   });
 
   function safeUrl(url) {
     return typeof url === 'string' && /^https:\/\//i.test(url) ? url : '';
   }
 
-  function includedCard(item) {
+  function websiteCard(item) {
     var article = document.createElement('article');
-    article.className = 'card price-included reveal';
+    article.className = 'card price-included price-card--primary reveal';
     var eyebrow = document.createElement('span');
     eyebrow.className = 'num';
-    eyebrow.textContent = item.title || 'Included with every plan';
+    eyebrow.textContent = (item.title || 'Website') + (item.subtitle ? ' · ' + item.subtitle : '');
     article.appendChild(eyebrow);
 
     var title = document.createElement('h3');
@@ -73,13 +92,40 @@
     article.appendChild(title);
 
     article.appendChild(featureList(item.features));
+
+    var checkout = safeUrl(item.checkoutUrl);
+    if (checkout) {
+      var link = document.createElement('a');
+      link.className = 'btn';
+      link.href = checkout;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = item.cta || 'Get started';
+      link.setAttribute('aria-label', link.textContent + ' — ' + (item.amount || '') + ' one-time (opens Stripe checkout in a new tab)');
+      article.appendChild(link);
+    }
+
+    var na = cfg.noAccounts;
+    if (na && Array.isArray(na.points) && na.points.length) {
+      var box = document.createElement('div');
+      box.className = 'price-no-accounts';
+      box.style.marginTop = '20px';
+      var nh = document.createElement('p');
+      var nb = document.createElement('b');
+      nb.textContent = na.title || 'No accounts needed';
+      nh.appendChild(nb);
+      box.appendChild(nh);
+      var ul = featureList(na.points);
+      ul.className = 'muted-sm';
+      box.appendChild(ul);
+      article.appendChild(box);
+    }
     return article;
   }
 
-  function planCard(plan, websiteFee, index) {
+  function planCard(plan, index) {
     var article = document.createElement('article');
     article.className = 'card price-card reveal';
-    if (plan.primary) article.classList.add('price-card--primary');
     if (plan.badge) article.classList.add('price-card--popular');
     article.style.setProperty('--d', (index * 80) + 'ms');
 
@@ -87,7 +133,7 @@
     top.className = 'price-card-top';
     var eyebrow = document.createElement('span');
     eyebrow.className = 'num';
-    eyebrow.textContent = 'Monthly plan';
+    eyebrow.textContent = 'Optional monthly plan';
     top.appendChild(eyebrow);
     if (plan.badge) {
       var badge = document.createElement('span');
@@ -103,26 +149,40 @@
 
     var figures = document.createElement('div');
     figures.className = 'price-figures';
-    if (websiteFee && websiteFee.amount) {
-      figures.appendChild(priceLine(websiteFee.amount, websiteFee.label || 'one-time website fee'));
-    }
-    if (plan.monthly) figures.appendChild(priceLine(plan.monthly, 'per month'));
+    if (plan.monthly) figures.appendChild(priceLine(plan.monthly, 'per month, optional'));
     article.appendChild(figures);
 
     article.appendChild(featureList(plan.features));
 
+    var feeAmt = site && site.amount ? site.amount : '';
     var checkout = safeUrl(plan.checkoutUrl);
     if (checkout) {
-      var link = document.createElement('a');
-      link.className = plan.primary ? 'btn' : 'btn btn-ghost';
-      link.href = checkout;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.textContent = plan.cta || ('Choose ' + (plan.name || 'plan'));
-      link.setAttribute('aria-label', link.textContent + ' (opens Stripe checkout in a new tab)');
-      article.appendChild(link);
+      article.appendChild(buttonLink(checkout, 'btn btn-ghost',
+        (feeAmt ? 'Website ' + feeAmt + ' + ' : '') + (plan.name || 'plan') + ' ' + (plan.monthly || '') + '/mo'));
+    }
+    var addOn = safeUrl(plan.addOnUrl);
+    if (addOn) {
+      var p = document.createElement('p');
+      p.className = 'muted-sm';
+      p.style.marginTop = '10px';
+      p.appendChild(document.createTextNode('Already have your site? '));
+      var a = buttonLink(addOn, '', 'Add ' + (plan.name || 'this plan') + ' only');
+      a.style.textDecoration = 'underline';
+      p.appendChild(a);
+      article.appendChild(p);
     }
     return article;
+  }
+
+  function buttonLink(url, cls, text) {
+    var link = document.createElement('a');
+    if (cls) link.className = cls;
+    link.href = url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = text;
+    link.setAttribute('aria-label', text + ' (opens Stripe checkout in a new tab)');
+    return link;
   }
 
   function priceLine(amount, detail) {
