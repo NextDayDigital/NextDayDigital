@@ -101,6 +101,38 @@ h3{letter-spacing:-.03em;font-weight:700}
 .compare tbody th{font-weight:700;width:26%}
 .compare td{color:var(--muted)}
 .compare .mine{background:color-mix(in srgb,var(--accent) 10%,transparent);color:var(--fg)}
+/* ---------- pricing (rendered from pricing-config.js) ---------- */
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;align-items:stretch}
+.price-included{margin-bottom:22px}
+.price-included h3{margin-bottom:8px}
+.price-included ul{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 22px;margin-bottom:0}
+.price-card{display:flex;flex-direction:column;height:100%;position:relative}
+.price-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.price-card-top .num{margin-bottom:0}
+.price-card h3{margin-bottom:6px}
+.price-badge{flex:none;padding:5px 10px;border-radius:999px;background:var(--accent);color:var(--on-accent);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.price-card--popular{border-color:var(--accent)}
+.price-optional{margin:0 0 10px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.price-figures{display:grid;gap:8px;margin:8px 0 4px}
+.price-figure{margin:0;color:var(--fg)}
+.price-figure b{font-family:var(--font-display);font-size:clamp(32px,3.4vw,46px);font-weight:800;letter-spacing:-.045em;line-height:1;color:var(--fg)}
+.price-figure span{display:block;margin-top:2px;font-size:13.5px;color:var(--muted)}
+.price-card ul,.price-included ul{list-style:none;margin:18px 0 22px;padding:0;display:grid;gap:8px}
+.price-included ul{margin-bottom:0}
+.price-card li,.price-included li{position:relative;padding-left:16px;font-size:14.5px;color:var(--muted)}
+.price-card li::before,.price-included li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.price-card .btn{margin-top:auto;width:100%}
+#pricing-heading{white-space:pre-line}
+#pricing-note{margin-top:22px;max-width:68ch}
+.price-card--optional{box-shadow:none}
+
+/* Instagram + mailing address in the agency footer and contact block */
+.social-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--fg);font-weight:600}
+.social-link svg{width:18px;height:18px;flex:none}
+.social-link:hover{color:var(--accent)}
+.site-foot address{font-style:normal;line-height:1.55;max-width:32ch}
+.contact-social{margin-top:14px}
+
 @media(max-width:760px){
   .compare thead{display:none}
   .compare tbody tr{display:block;border-bottom:1px solid var(--line);padding:12px 0}

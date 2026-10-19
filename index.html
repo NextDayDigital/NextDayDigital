@@ -26,7 +26,7 @@ try{s=localStorage.getItem('ndd-mode')}catch(e){}
 h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='light')?s:'light')))})();
 </script>
 <link as="image" fetchpriority="high" href="/landscape.jpg" rel="preload"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "NextDay Digital", "description": "Custom websites and practical business automation for small businesses.", "url": "https://nextdaydigital.digital/", "email": "anthonyalfano157@gmail.com", "areaServed": "United States", "image": "https://nextdaydigital.digital/landscape.jpg", "address": {"@type": "PostalAddress", "addressLocality": "Conway", "addressRegion": "SC", "addressCountry": "US"}, "founder": [{"@type": "Person", "name": "Anthony Alfano"}, {"@type": "Person", "name": "Luciano Alfano"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "NextDay Digital", "description": "Custom websites and practical business automation for small businesses.", "url": "https://nextdaydigital.digital/", "email": "anthonyalfano157@gmail.com", "areaServed": "United States", "image": "https://nextdaydigital.digital/landscape.jpg", "address": {"@type": "PostalAddress", "streetAddress": "6650 Rivers Ave Ste 105 #570633", "addressLocality": "North Charleston", "addressRegion": "SC", "postalCode": "29406", "addressCountry": "US"}, "sameAs": ["https://www.instagram.com/nextday.digital"], "founder": [{"@type": "Person", "name": "Anthony Alfano"}, {"@type": "Person", "name": "Luciano Alfano"}]}</script>
 <link href="site-upgrades.css" id="ndd-upgrade-css" rel="stylesheet"/><style id="ndd-video-style">/* Video zoom: raise above 1 ONLY if the MP4 has black bars baked into it. */:root{--ndd-video-zoom:1}.hero.ndd-video-hero{position:relative;isolation:isolate;overflow:hidden;background:#000}.hero.ndd-video-hero>.ndd-fallback,.hero.ndd-video-hero>.ndd-video{position:absolute;inset:0;margin:0;width:100%;height:100%;min-width:100%;min-height:100%;max-width:none;max-height:none;object-fit:cover;object-position:var(--ndd-video-pos,50% 50%);transform:scale(var(--ndd-video-zoom,1));transform-origin:50% 50%;pointer-events:none;z-index:0}.hero.ndd-video-hero>.ndd-fallback{display:block;opacity:1;visibility:visible}.hero.ndd-video-hero>.ndd-video{display:block;opacity:0;visibility:hidden}.hero.ndd-video-hero.video-ready>.ndd-video{opacity:1;visibility:visible}.hero.ndd-video-hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#000a,#0004);pointer-events:none}.hero.ndd-video-hero>.hero-inner{position:relative;z-index:2}.hero.ndd-video-hero>.ndd-toggle{position:absolute;right:18px;bottom:18px;z-index:3;background:#000a;color:white;border:1px solid #fff9;padding:9px 14px;border-radius:6px;font:inherit;cursor:pointer}.ndd-toggle[hidden]{display:none!important}.ndd-toggle:focus-visible{outline:3px solid white;outline-offset:3px}@media(max-width:860px){.hero.ndd-video-hero>.ndd-fallback,.hero.ndd-video-hero>.ndd-video{object-position:var(--ndd-video-mobile-pos,var(--ndd-video-pos,50% 50%));transform:scale(var(--ndd-video-mobile-zoom,var(--ndd-video-zoom,1)))}}/* Homepage: darker photo behind text + soft glow */.hero.ndd-video-hero::after{background:linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.55) 50%,rgba(0,0,0,.3) 100%),linear-gradient(0deg,rgba(0,0,0,.55),transparent 55%)}@media(max-width:860px){.hero.ndd-video-hero::after{background:rgba(0,0,0,.62)}}/* Glow on ALL homepage hero text */.hero.ndd-video-hero>.hero-inner,.hero.ndd-video-hero>.hero-inner *,.hero.ndd-video-hero>.ndd-toggle{text-shadow:0 1px 3px rgba(0,0,0,.95),0 0 12px rgba(0,0,0,.85),0 0 26px rgba(0,0,0,.7)}.hero.ndd-video-hero>.hero-inner h1{text-shadow:0 2px 4px rgba(0,0,0,.85),0 0 18px rgba(0,0,0,.8),0 0 42px rgba(0,0,0,.65)}.hero.ndd-video-hero>.hero-inner .btn:not(.btn-on-dark){text-shadow:0 1px 3px rgba(0,0,0,.6)}</style><style id="ndd-mobile-mode-btn">.mode-btn--mobile{display:none}@media(max-width:1100px){.mode-btn--mobile{display:grid;margin-left:auto;margin-right:-12px}}</style></head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -39,9 +39,10 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 <a href="themes.html">Website themes</a>
 <a aria-current="page" href="index.html#what">What you get</a>
 <a aria-current="page" href="index.html#how">How it works</a>
+<a aria-current="page" href="index.html#pricing">Pricing</a>
 <a aria-current="page" href="index.html#faq">FAQ</a>
 <button aria-label="Switch colour mode" class="mode-btn" data-toggle-mode="" type="button">☽</button>
-<a class="btn btn-sm" href="index.html#start">Start a project</a>
+<a class="btn btn-sm" data-pricing-cta="primary" href="index.html#pricing">Get started</a>
 </div>
 <button aria-label="Switch colour mode" class="mode-btn mode-btn--mobile" type="button">☽</button>
 <button aria-controls="drawer" aria-expanded="false" aria-label="Menu" class="burger" id="burger"><i></i><i></i><i></i></button>
@@ -50,8 +51,9 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 <a href="themes.html">Website themes</a>
 <a href="index.html#what">What you get</a>
 <a href="index.html#how">How it works</a>
+<a href="index.html#pricing">Pricing</a>
 <a href="index.html#faq">FAQ</a>
-<a href="index.html#start">Start a project</a>
+<a data-pricing-cta="primary" href="index.html#pricing">Get started</a>
 </div>
 </div>
 </header>
@@ -64,6 +66,7 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 <p>A clear, fast, mobile-first website that shows what you do and makes getting in touch obvious. You work directly with Anthony and Luciano on the design, the words and the launch.</p>
 <div class="hero-cta">
 <a class="btn" href="themes.html">Browse 8 website themes</a>
+<a class="btn btn-on-dark" href="#pricing">See pricing</a>
 <a class="btn btn-on-dark" href="#start">Get a written scope</a>
 </div>
 <p class="hero-meta">New site or refresh  ·  Price agreed before work starts  ·  Your domain stays in your name</p>
@@ -216,7 +219,20 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 <p class="muted-sm" style="margin-top:12px"><b>You do:</b> one round of feedback, then approve launch.</p></article>
 </div>
 </div></section>
-<section class="section tint" id="start"><div class="wrap">
+<section class="section tint" id="pricing" aria-labelledby="pricing-heading">
+<div class="wrap">
+<div class="sec-head reveal">
+<div><span class="kicker" id="pricing-kicker">Pricing</span><h2 id="pricing-heading">Buy a finished
+website online.</h2></div>
+<p class="lede" id="pricing-lede">Every plan includes a $499 one-time website fee, then one monthly plan.</p>
+</div>
+<div id="pricing-included"></div>
+<div class="price-grid" id="pricing-offers"></div>
+<p class="muted-sm" id="pricing-note">14-day money-back guarantee on the $499 website fee. Switch or cancel your monthly plan anytime. Payment is secured by Stripe.</p>
+<noscript><p>Pricing loads with JavaScript. Email <a href="mailto:anthonyalfano157@gmail.com">anthonyalfano157@gmail.com</a> and we will send the current plans.</p></noscript>
+</div>
+</section>
+<section class="section" id="start"><div class="wrap">
 <div class="split" style="--split:1fr 1.05fr;--split-gap:7%">
 <div class="reveal">
 <span class="kicker">Start a project</span>
@@ -224,6 +240,7 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 <p class="lede">Send your current website, if you have one, and the single thing you want it to do better.</p>
 <p>Typical first reply is a few questions and then a written scope. Nothing is charged for the conversation or the proposal.</p>
 <p style="margin-top:20px"><a href="mailto:anthonyalfano157@gmail.com"><u>anthonyalfano157@gmail.com</u></a></p>
+<p class="contact-social"><a class="social-link" href="https://www.instagram.com/nextday.digital" target="_blank" rel="noopener noreferrer" aria-label="NextDay Digital on Instagram, @nextday.digital (opens in a new tab)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/></svg><span>@nextday.digital</span></a></p>
 <p class="muted-sm" hidden="" id="picked" style="margin-top:12px;font-weight:700;color:var(--accent)"></p>
 </div>
 <noscript><p>This form needs JavaScript. Email Anthony and Luciano directly at <a href="mailto:anthonyalfano157@gmail.com">anthonyalfano157@gmail.com</a>.</p></noscript><form aria-describedby="inquiry-help" class="reveal" id="inquiry" style="--d:110ms;display:grid;gap:16px"><p class="muted-sm" id="inquiry-help">This prepares an email to Anthony and Luciano. Nothing is sent automatically. Your entries stay in this tab until you clear them or close it.</p>
@@ -246,7 +263,7 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 <div class="center reveal"><span class="kicker nomark">Before we talk</span><h2 style="margin-bottom:38px">Questions, answered.</h2></div>
 <details class="faq-item"><summary>Are the demos real client projects?</summary><p>No. All eight are fictional design concepts. Every business name, price, address, phone number and review inside them is invented, and the imagery is illustrative. They demonstrate design and structure, not client results.</p></details>
 <details class="faq-item"><summary>Can I just use one of the themes as-is?</summary><p>A theme is a starting point for layout, typography and tone · not a finished site. Your copy, photos, services, colours and any extra pages get built on top of it. Naming the one you liked simply gives the first conversation a direction.</p></details>
-<details class="faq-item"><summary>What will my website cost?</summary><p>Send a short description of what you need. You will get the work outlined and a written quote including any ongoing costs before you decide. Nothing is charged for the conversation or the proposal.</p></details>
+<details class="faq-item"><summary>What will my website cost?</summary><p>Send a short description of what you need. You will get the work outlined and a written quote including any ongoing costs before you decide. Nothing is charged for the conversation or the proposal. You can also buy from the <a href="#pricing"><u>pricing section</u></a>. Payment is secured by Stripe.</p></details>
 <details class="faq-item"><summary>Does “NextDay” mean it launches tomorrow?</summary><p>No, it is the brand name. Your proposal sets a realistic timeline based on scope, content and revisions. The usual hold-up is content, not code.</p></details>
 <details class="faq-item"><summary>What if I do not have good photos?</summary><p>Most businesses do not at first. Your own phone photos are often better than stock, and the proposal will say plainly whether photography is included, licensed or something you will supply later.</p></details>
 <details class="faq-item"><summary>Will I own the website?</summary><p>The proposal specifies the files, accounts and access included in the handoff, along with any third-party licences. Domain and service accounts should be in your name from day one.</p></details>
@@ -257,10 +274,14 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 <div class="wrap">
 <footer class="site-foot">
 <a class="logo" href="index.html">NextDay.<span>DIGITAL</span></a>
-<span><a href="themes.html">Website themes</a>  ·  <a href="index.html#what">What you get</a>  ·  <a href="index.html#faq">FAQ</a></span>
+<span><a href="themes.html">Website themes</a>  ·  <a href="index.html#what">What you get</a>  ·  <a href="index.html#pricing">Pricing</a>  ·  <a href="index.html#faq">FAQ</a>  ·  <a data-pricing-cta="billing" href="https://billing.stripe.com/p/login/00waEWaDTbUzc9vbD37ok00" target="_blank" rel="noopener noreferrer" aria-label="Manage billing (opens Stripe in a new tab)">Manage billing</a></span>
+<a class="social-link" href="https://www.instagram.com/nextday.digital" target="_blank" rel="noopener noreferrer" aria-label="NextDay Digital on Instagram, @nextday.digital (opens in a new tab)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/></svg><span>@nextday.digital</span></a>
 <span>Conway, SC · serving the US · <a href="mailto:anthonyalfano157@gmail.com"><u>Email Anthony and Luciano</u></a></span>
+<address>6650 Rivers Ave Ste 105 #570633<br/>North Charleston, SC 29406</address>
 </footer>
 </div>
+<script src="pricing-config.js"></script>
+<script src="pricing.js"></script>
 <script src="app.js"></script>
 <script src="theme-fx.js"></script>
 <script src="site-upgrades.js"></script><script id="ndd-video-script">(function(){document.querySelectorAll('.ndd-video-hero').forEach(function(h){var v=h.querySelector('video'),b=h.querySelector('.ndd-toggle'),m=matchMedia('(prefers-reduced-motion: reduce)'),failed=false;function label(){b.textContent=v.paused?'Play video':'Pause video'}function hide(){h.classList.remove('video-ready');b.hidden=true}function fail(){failed=true;v.pause();hide()}function play(){if(failed)return;v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){hide();if(!failed){b.hidden=false;label()}})}v.addEventListener('playing',function(){h.classList.add('video-ready');b.hidden=false;label()});v.addEventListener('pause',label);v.addEventListener('error',fail);v.querySelector('source').addEventListener('error',fail);b.addEventListener('click',function(){if(v.paused)play();else v.pause()});function preference(){if(m.matches){v.pause();hide();if(!failed){b.hidden=false;label()}}else play()}if(m.addEventListener)m.addEventListener('change',preference);v.muted=true;preference()})})();</script><script id="ndd-mobile-mode-script">(function(){var m=document.querySelector(".mode-btn--mobile"),d=document.querySelector(".menu [data-toggle-mode]");if(!m||!d)return;function sync(){m.textContent=d.textContent}sync();m.addEventListener("click",function(){d.click();setTimeout(sync,0)})})();</script></body>
