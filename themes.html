@@ -43,9 +43,10 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 <a aria-current="page" href="themes.html">Website themes</a>
 <a href="index.html#what">What you get</a>
 <a href="index.html#how">How it works</a>
+<a href="index.html#pricing">Pricing</a>
 <a href="index.html#faq">FAQ</a>
 <button aria-label="Switch colour mode" class="mode-btn" data-toggle-mode="" type="button">☽</button>
-<a class="btn btn-sm" href="index.html#start">Start a project</a>
+<a class="btn btn-sm" data-pricing-cta="primary" href="index.html#pricing">Get started</a>
 </div>
 <button aria-label="Switch colour mode" class="mode-btn mode-btn--mobile" type="button">☽</button>
 <button aria-controls="drawer" aria-expanded="false" aria-label="Menu" class="burger" id="burger"><i></i><i></i><i></i></button>
@@ -54,8 +55,9 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 <a href="themes.html">Website themes</a>
 <a href="index.html#what">What you get</a>
 <a href="index.html#how">How it works</a>
+<a href="index.html#pricing">Pricing</a>
 <a href="index.html#faq">FAQ</a>
-<a href="index.html#start">Start a project</a>
+<a data-pricing-cta="primary" href="index.html#pricing">Get started</a>
 </div>
 </div>
 </header>
@@ -268,17 +270,21 @@ h.setAttribute('data-theme',(u==='dark'||u==='light')?u:(((s==='dark'||s==='ligh
 <span class="kicker nomark" style="color:inherit;opacity:.72">Found one you like?</span>
 <h2>Name the theme in your message.</h2>
 <p>Open two or three on your phone, decide which one you would trust if it belonged to a competitor, then tell Anthony &amp; Luciano which it was and what your site needs to do better.</p>
-<div class="hero-cta"><a class="btn" href="index.html#start">Start a project</a></div>
+<div class="hero-cta"><a class="btn" href="index.html#pricing">See pricing</a><a class="btn btn-on-dark" href="index.html#start">Start a project</a></div>
 </div>
 </div></section>
 </main>
 <div class="wrap">
 <footer class="site-foot">
 <a class="logo" href="index.html">NextDay.<span>DIGITAL</span></a>
-<span><a href="themes.html">Website themes</a>  ·  <a href="index.html#what">What you get</a>  ·  <a href="index.html#faq">FAQ</a></span>
+<span><a href="themes.html">Website themes</a>  ·  <a href="index.html#what">What you get</a>  ·  <a href="index.html#pricing">Pricing</a>  ·  <a href="index.html#faq">FAQ</a>  ·  <a data-pricing-cta="billing" href="https://billing.stripe.com/p/login/00waEWaDTbUzc9vbD37ok00" target="_blank" rel="noopener noreferrer" aria-label="Manage billing (opens Stripe in a new tab)">Manage billing</a></span>
+<a class="social-link" href="https://www.instagram.com/nextday.digital" target="_blank" rel="noopener noreferrer" aria-label="NextDay Digital on Instagram, @nextday.digital (opens in a new tab)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/></svg><span>@nextday.digital</span></a>
 <span>Conway, SC · serving the US · <a href="mailto:anthonyalfano157@gmail.com"><u>Email Anthony &amp; Luciano</u></a></span>
+<address>6650 Rivers Ave Ste 105 #570633<br/>North Charleston, SC 29406</address>
 </footer>
 </div>
+<script src="pricing-config.js"></script>
+<script src="pricing.js"></script>
 <script src="app.js"></script>
 <script src="theme-fx.js"></script>
 <script src="site-upgrades.js"></script><script id="ndd-mobile-mode-script">(function(){var m=document.querySelector(".mode-btn--mobile"),d=document.querySelector(".menu [data-toggle-mode]");if(!m||!d)return;function sync(){m.textContent=d.textContent}sync();m.addEventListener("click",function(){d.click();setTimeout(sync,0)})})();</script></body>
