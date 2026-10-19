@@ -44,6 +44,9 @@ html[data-theme="dark"]{
 h2{font-size:clamp(32px,4.1vw,56px);line-height:1.04;letter-spacing:-.045em;font-weight:700}
 h3{letter-spacing:-.03em;font-weight:700}
 .logo span{letter-spacing:.26em}
+.site-head .logo{display:flex;align-items:center;gap:10px}
+.site-head .logo .brand-mark{width:36px;height:36px;border-radius:8px;flex:none;object-fit:cover}
+.site-head .logo .logo-name{display:block;flex:none;margin:0;font-family:inherit;font-size:inherit;font-weight:inherit;letter-spacing:inherit;line-height:1.05;color:inherit}
 .mode-btn{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;
   display:grid;place-items:center;font-size:15px;transition:transform .4s var(--ease),border-color .3s}
 .mode-btn:hover{transform:rotate(22deg);border-color:var(--accent)}
