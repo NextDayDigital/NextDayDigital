@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
-# Demo pages retain their own noindex,follow meta tags.
-Sitemap: https://nextdaydigital.digital/sitemap.xml
+# Internal handoff notes. Not part of the public site.
+Disallow: /README.md
+Disallow: /AUDIT-AND-VALIDATION.txt
+Disallow: /ROOT-IMAGE-AUDIT.txt
+Disallow: /VIDEO-SETUP.txt
+# Demo pages keep their own noindex,follow meta tags and are omitted from the sitemap.
+
+Sitemap: https://nextdaydigital.org/sitemap.xml
