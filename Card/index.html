@@ -1,18 +1,21 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <title>Luciano Alfano | NextDay Digital</title>
 
-  
-  
+  <meta
+    name="description"
+    content="Contact Luciano Alfano at NextDay Digital, find your custom website demo, or browse ready-made website themes."
+  >
 
-  Luciano Alfano | NextDay Digital
+  <meta name="theme-color" content="#06371b">
 
-  
+  <link rel="icon" href="/assets/favicon.ico">
 
-  
-
-  
-
-  
+  <style>
     :root {
       --green: #06371b;
       --green2: #0b4a26;
@@ -21,7 +24,7 @@
       --ink: #10231a;
       --gray: #5b6660;
       --line: #e3eadf;
-      --background: #f7faf4;
+      --bg: #f7faf4;
       --white: #ffffff;
     }
 
@@ -38,23 +41,12 @@
     body {
       min-height: 100vh;
       overflow-x: hidden;
-
-      font-family:
-        system-ui,
-        -apple-system,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--ink);
-      background: var(--background);
+      background: var(--bg);
     }
 
-    /* ---------------------------
-       Falling leaves
-    --------------------------- */
+    /* FALLING LEAVES */
 
     .leaves {
       position: fixed;
@@ -67,33 +59,27 @@
     .leaf {
       position: absolute;
       top: -60px;
-      opacity: 0.20;
-      animation: leafFall linear infinite;
+      opacity: 0.18;
+      animation: fall linear infinite;
     }
 
     .leaf svg {
-      display: block;
       width: 100%;
       height: 100%;
+      display: block;
     }
 
-    @keyframes leafFall {
+    @keyframes fall {
       0% {
-        transform:
-          translate(0, -60px)
-          rotate(0deg);
+        transform: translate(0, -60px) rotate(0deg);
       }
 
       50% {
-        transform:
-          translate(40px, 50vh)
-          rotate(160deg);
+        transform: translate(40px, 50vh) rotate(160deg);
       }
 
       100% {
-        transform:
-          translate(-20px, 110vh)
-          rotate(320deg);
+        transform: translate(-20px, 110vh) rotate(320deg);
       }
     }
 
@@ -103,70 +89,50 @@
       }
     }
 
-    /* ---------------------------
-       Main layout
-    --------------------------- */
+    /* PAGE */
 
     .wrap {
       position: relative;
       z-index: 1;
-
       width: 100%;
       max-width: 480px;
-
       margin: 0 auto;
       padding: 28px 18px 48px;
     }
 
-    /* ---------------------------
-       Profile / hero
-    --------------------------- */
+    /* HERO */
 
     .hero {
       position: relative;
       overflow: hidden;
-
       padding: 30px 24px 26px;
-
       text-align: center;
-      color: white;
-
+      color: var(--white);
       background:
         linear-gradient(
           160deg,
           var(--green) 0%,
           var(--green2) 100%
         );
-
       border-radius: 24px;
-
-      box-shadow:
-        0 18px 40px
-        rgba(6, 55, 27, 0.24);
+      box-shadow: 0 18px 40px rgba(6, 55, 27, 0.24);
     }
 
     .hero::after {
       content: "";
-
       position: absolute;
-
       z-index: 0;
-
       width: 190px;
       height: 190px;
-
       top: -70px;
       right: -65px;
-
       border-radius: 50%;
-
       background:
         radial-gradient(
           circle,
           rgba(145, 230, 50, 0.27),
           transparent 70%
         );
-
       pointer-events: none;
     }
 
@@ -177,13 +143,10 @@
 
     .brand {
       margin-bottom: 22px;
-
       font-size: 14px;
       font-weight: 800;
-
       letter-spacing: 0.08em;
       text-transform: uppercase;
-
       opacity: 0.92;
     }
 
@@ -191,36 +154,24 @@
       color: var(--lime);
     }
 
-    /* ---------------------------
-       Profile photo
-    --------------------------- */
+    /* PROFILE PHOTO */
 
     .avatar {
       position: relative;
-
       display: grid;
       place-items: center;
-
       width: 120px;
       height: 120px;
-
       margin: 0 auto 17px;
-
       overflow: hidden;
-
-      color: var(--lime);
-
       background: var(--green2);
-
       border: 4px solid var(--lime);
       border-radius: 50%;
-
-      box-shadow:
-        0 0 0 6px
-        rgba(145, 230, 50, 0.14);
+      box-shadow: 0 0 0 6px rgba(145, 230, 50, 0.14);
     }
 
     .avatar-fallback {
+      color: var(--lime);
       font-size: 40px;
       font-weight: 800;
     }
@@ -228,12 +179,9 @@
     .avatar img {
       position: absolute;
       inset: 0;
-
       display: block;
-
       width: 100%;
       height: 100%;
-
       object-fit: cover;
       object-position: center;
     }
@@ -246,46 +194,31 @@
 
     .role {
       margin-top: 6px;
-
       color: #cfe8c0;
-
       font-size: 15px;
     }
 
-    /* ---------------------------
-       Buttons
-    --------------------------- */
+    /* TOP BUTTONS */
 
     .actions {
       display: grid;
       grid-template-columns: 1fr 1fr;
-
       gap: 10px;
-
       margin-top: 22px;
     }
 
     .button {
       display: flex;
-
       align-items: center;
       justify-content: center;
-
-      gap: 8px;
-
       min-height: 47px;
-
       padding: 12px 14px;
-
       font-family: inherit;
       font-size: 15px;
       font-weight: 700;
-
       text-decoration: none;
-
       border: 0;
       border-radius: 12px;
-
       cursor: pointer;
     }
 
@@ -299,118 +232,78 @@
     }
 
     .button-secondary {
-      color: white;
-
-      background:
-        rgba(255, 255, 255, 0.10);
-
-      border:
-        1px solid
-        rgba(255, 255, 255, 0.25);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
     .button-full {
       grid-column: 1 / -1;
     }
 
-    /* ---------------------------
-       Panels
-    --------------------------- */
+    /* PANELS */
 
     .panel {
       padding: 22px 20px;
-
       margin-top: 16px;
-
-      background: white;
-
-      border:
-        1px solid
-        var(--line);
-
+      background: var(--white);
+      border: 1px solid var(--line);
       border-radius: 18px;
-
-      box-shadow:
-        0 6px 20px
-        rgba(6, 55, 27, 0.06);
+      box-shadow: 0 6px 20px rgba(6, 55, 27, 0.06);
     }
 
     .panel h2 {
       margin-bottom: 5px;
-
       color: var(--green);
-
       font-size: 20px;
     }
 
-    .panel-description {
+    .description {
       margin-bottom: 15px;
-
       color: var(--gray);
-
       font-size: 14.5px;
       line-height: 1.5;
     }
 
-    /* ---------------------------
-       Contact information
-    --------------------------- */
+    /* CONTACT */
 
     .contact-list {
       list-style: none;
     }
 
     .contact-list li + li {
-      border-top:
-        1px solid
-        var(--line);
+      border-top: 1px solid var(--line);
     }
 
     .contact-list a {
       display: flex;
-
       align-items: center;
-
       gap: 14px;
-
       padding: 13px 2px;
-
       color: var(--ink);
-
       font-size: 15.5px;
-
       text-decoration: none;
     }
 
     .contact-icon {
       display: grid;
       place-items: center;
-
-      flex: 0 0 auto;
-
-      width: 38px;
-      height: 38px;
-
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
       color: var(--green);
-
+      font-size: 17px;
       font-weight: 800;
-
       background: var(--lime-soft);
-
-      border-radius: 10px;
+      border-radius: 11px;
     }
 
     .contact-label {
       display: block;
-
       margin-bottom: 2px;
-
       color: var(--gray);
-
       font-size: 11px;
-
       letter-spacing: 0.07em;
-
       text-transform: uppercase;
     }
 
@@ -419,9 +312,7 @@
       word-break: break-word;
     }
 
-    /* ---------------------------
-       Search
-    --------------------------- */
+    /* SEARCH */
 
     .search-box {
       position: relative;
@@ -430,93 +321,57 @@
 
     .search-box input {
       width: 100%;
-
-      padding:
-        14px
-        16px
-        14px
-        44px;
-
+      padding: 14px 16px 14px 44px;
       color: var(--ink);
-
       font-family: inherit;
       font-size: 16px;
-
-      background: var(--background);
-
-      border:
-        2px solid
-        var(--line);
-
+      background: var(--bg);
+      border: 2px solid var(--line);
       border-radius: 12px;
-
       outline: none;
-
       appearance: none;
       -webkit-appearance: none;
     }
 
     .search-box input:focus {
-      background: white;
+      background: var(--white);
       border-color: var(--lime);
     }
 
     .search-icon {
       position: absolute;
-
       top: 50%;
       left: 15px;
-
-      transform:
-        translateY(-50%);
-
+      transform: translateY(-50%);
       color: var(--gray);
-
       font-size: 18px;
-
       pointer-events: none;
     }
 
     .results {
       display: grid;
-
       gap: 8px;
-
       margin-top: 12px;
     }
 
     .result {
       display: flex;
-
       align-items: center;
       justify-content: space-between;
-
       gap: 12px;
-
       padding: 13px 14px;
-
       color: var(--green);
-
       font-weight: 750;
-
       text-decoration: none;
-
       background: var(--lime-soft);
-
-      border:
-        1px solid
-        #d3efb3;
-
+      border: 1px solid #d3efb3;
       border-radius: 12px;
     }
 
     .result small {
       display: block;
-
       margin-top: 2px;
-
       color: var(--gray);
-
       font-size: 13px;
       font-weight: 500;
     }
@@ -527,18 +382,11 @@
 
     .no-result {
       padding: 14px;
-
       color: var(--gray);
-
       font-size: 14.5px;
       line-height: 1.5;
-
-      background: var(--background);
-
-      border:
-        1px dashed
-        #cdd8c6;
-
+      background: var(--bg);
+      border: 1px dashed #cdd8c6;
       border-radius: 12px;
     }
 
@@ -551,9 +399,7 @@
       font-weight: 700;
     }
 
-    /* ---------------------------
-       Themes CTA
-    --------------------------- */
+    /* THEMES */
 
     .themes-panel {
       background:
@@ -562,43 +408,29 @@
           var(--lime-soft),
           #f6fdee
         );
-
       border-color: #d3efb3;
     }
 
     .themes-button {
       width: 100%;
-
-      color: white;
-
+      color: var(--white);
       background: var(--green);
     }
 
-    /* ---------------------------
-       Footer
-    --------------------------- */
+    /* FOOTER */
 
     footer {
       margin-top: 26px;
-
       color: var(--gray);
-
       font-size: 13px;
-
       text-align: center;
     }
 
     footer a {
       color: var(--green);
-
       font-weight: 650;
-
       text-decoration: none;
     }
-
-    /* ---------------------------
-       Small phones
-    --------------------------- */
 
     @media (max-width: 360px) {
       .wrap {
@@ -619,82 +451,611 @@
         font-size: 14px;
       }
     }
-  
+  </style>
+</head>
 
+<body>
 
+  <div
+    class="leaves"
+    id="leaves"
+    aria-hidden="true">
+  </div>
 
-
-  
-  
-
-  
+  <main class="wrap">
 
     <!-- PROFILE -->
-    
 
-      
-        NextDay. Digital
-      
+    <section class="hero">
 
-      
+      <div class="brand">
+        NextDay<span class="brand-dot">.</span> Digital
+      </div>
 
-        
+      <div class="avatar">
+
+        <span
+          class="avatar-fallback"
+          aria-hidden="true">
           LA
-        
+        </span>
 
-        
-      
+        <img
+          src="/assets/IMG_6230.jpeg"
+          alt="Profile photo"
+          onerror="this.remove()">
 
-      Luciano Alfano
+      </div>
 
-      
+      <h1>Luciano Alfano</h1>
+
+      <p class="role">
         Web Design & Development
-      
+      </p>
 
-      
+      <div class="actions">
 
-        
+        <a
+          class="button button-primary"
+          href="tel:+17328561662">
           Call
-        
+        </a>
 
-        
+        <a
+          class="button button-secondary"
+          href="sms:+17328561662">
           Text
-        
+        </a>
 
-        
+        <a
+          class="button button-secondary button-full"
+          href="/Card/luciano-alfano.vcf">
           Save Contact
-        
+        </a>
 
-      
+      </div>
 
-    
+    </section>
 
 
-    <!-- CONTACT INFO -->
-    
+    <!-- CONTACT -->
 
-      
+    <section class="panel">
 
-        
-          
+      <ul class="contact-list">
 
-            
+        <li>
+          <a href="tel:+17328561662">
+
+            <span class="contact-icon">
               ☎
-            
+            </span>
 
-            
-              
+            <span>
+
+              <span class="contact-label">
                 Phone
-              
+              </span>
 
-              
+              <span class="contact-value">
                 (732) 856-1662
-              
-            
+              </span>
 
-          
-        
+            </span>
 
-        
-          <a
-            href="mailto:lalfanodesign@gmail.com?subject=Website%20for%20my%
+          </a>
+        </li>
+
+
+        <li>
+
+          <a href="mailto:lalfanodesign@gmail.com?subject=Website%20for%20my%20business">
+
+            <span class="contact-icon">
+              @
+            </span>
+
+            <span>
+
+              <span class="contact-label">
+                Email
+              </span>
+
+              <span class="contact-value">
+                lalfanodesign@gmail.com
+              </span>
+
+            </span>
+
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a href="https://nextdaydigital.org/">
+
+            <span class="contact-icon">
+              ↗
+            </span>
+
+            <span>
+
+              <span class="contact-label">
+                Website
+              </span>
+
+              <span class="contact-value">
+                nextdaydigital.org
+              </span>
+
+            </span>
+
+          </a>
+
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- DEMO SEARCH -->
+
+    <section class="panel">
+
+      <h2>
+        Find your website demo
+      </h2>
+
+      <p class="description">
+        Already talked with me? Search your business name to see if I've built a custom demo for you.
+      </p>
+
+      <label class="search-box">
+
+        <span
+          class="search-icon"
+          aria-hidden="true">
+          🔎
+        </span>
+
+        <input
+          id="businessSearch"
+          type="search"
+          placeholder="Search your business name..."
+          autocomplete="off"
+          aria-label="Search your business name">
+
+      </label>
+
+      <div
+        class="results"
+        id="searchResults"
+        aria-live="polite">
+      </div>
+
+    </section>
+
+
+    <!-- WEBSITE THEMES -->
+
+    <section class="panel themes-panel">
+
+      <h2>
+        Don't see your business?
+      </h2>
+
+      <p class="description">
+        Browse website designs built for businesses like yours. Find a style you like and I'll customize it for your business.
+      </p>
+
+      <a
+        class="button themes-button"
+        href="https://nextdaydigital.org/themes.html#grid">
+        Browse Website Themes →
+      </a>
+
+    </section>
+
+
+    <footer>
+
+      © <span id="year"></span>
+
+      <a href="https://nextdaydigital.org/">
+        NextDay Digital
+      </a>
+
+      · Conway, SC
+
+    </footer>
+
+  </main>
+
+
+  <script>
+
+    /*
+      ============================================
+      BUSINESS DEMOS
+
+      When you make a demo for a business,
+      add it here.
+
+      Example:
+
+      {
+        name: "Joe's Pizza",
+        url: "/joes-pizza.html",
+        keywords: "pizza restaurant italian"
+      }
+
+      ============================================
+    */
+
+    const DEMOS = [
+
+      /*
+      {
+        name: "OD Taco Co.",
+        url: "/YOUR-REAL-DEMO.html",
+        keywords: "taco tacos mexican restaurant"
+      },
+
+      {
+        name: "River Town Tavern",
+        url: "/YOUR-REAL-DEMO.html",
+        keywords: "restaurant tavern bar pub"
+      },
+
+      {
+        name: "Poppie's Downtown",
+        url: "/YOUR-REAL-DEMO.html",
+        keywords: "restaurant downtown"
+      }
+      */
+
+    ];
+
+
+    /* SEARCH */
+
+    const searchInput =
+      document.getElementById(
+        "businessSearch"
+      );
+
+    const searchResults =
+      document.getElementById(
+        "searchResults"
+      );
+
+
+    function normalizeText(text) {
+
+      return (text || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(
+          /[\u0300-\u036f]/g,
+          ""
+        )
+        .replace(
+          /[^a-z0-9 ]/g,
+          ""
+        )
+        .replace(
+          /\s+/g,
+          " "
+        )
+        .trim();
+
+    }
+
+
+    function searchDemos() {
+
+      const query =
+        normalizeText(
+          searchInput.value
+        );
+
+
+      searchResults.innerHTML =
+        "";
+
+
+      if (!query) {
+        return;
+      }
+
+
+      const queryWords =
+        query.split(" ");
+
+
+      const matches =
+        DEMOS.filter(
+          function(demo) {
+
+            const searchable =
+              normalizeText(
+                demo.name +
+                " " +
+                (demo.keywords || "")
+              );
+
+
+            return queryWords.every(
+              function(word) {
+
+                return searchable.includes(
+                  word
+                );
+
+              }
+            );
+
+          }
+        );
+
+
+      if (matches.length) {
+
+        matches.forEach(
+          function(demo) {
+
+            const result =
+              document.createElement(
+                "a"
+              );
+
+
+            result.className =
+              "result";
+
+
+            result.href =
+              demo.url;
+
+
+            const resultText =
+              document.createElement(
+                "span"
+              );
+
+
+            resultText.textContent =
+              demo.name;
+
+
+            const description =
+              document.createElement(
+                "small"
+              );
+
+
+            description.textContent =
+              "View your website demo";
+
+
+            resultText.appendChild(
+              description
+            );
+
+
+            const arrow =
+              document.createElement(
+                "span"
+              );
+
+
+            arrow.className =
+              "result-arrow";
+
+
+            arrow.textContent =
+              "→";
+
+
+            result.appendChild(
+              resultText
+            );
+
+
+            result.appendChild(
+              arrow
+            );
+
+
+            searchResults.appendChild(
+              result
+            );
+
+          }
+        );
+
+      } else {
+
+        const message =
+          document.createElement(
+            "div"
+          );
+
+
+        message.className =
+          "no-result";
+
+
+        message.innerHTML =
+          "<strong>No demo found yet.</strong> " +
+          "Browse the website themes below, " +
+          "or call or text me at " +
+          "<a href='tel:+17328561662'>" +
+          "(732) 856-1662" +
+          "</a>.";
+
+
+        searchResults.appendChild(
+          message
+        );
+
+      }
+
+    }
+
+
+    searchInput.addEventListener(
+      "input",
+      searchDemos
+    );
+
+
+    /*
+      Allows URLs such as:
+
+      /Card/?q=River%20Town%20Tavern
+    */
+
+    const URLQuery =
+      new URLSearchParams(
+        window.location.search
+      ).get("q");
+
+
+    if (URLQuery) {
+
+      searchInput.value =
+        URLQuery;
+
+      searchDemos();
+
+    }
+
+
+    /* FALLING LEAVES */
+
+    (function createLeaves() {
+
+      if (
+        window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches
+      ) {
+        return;
+      }
+
+
+      const container =
+        document.getElementById(
+          "leaves"
+        );
+
+
+      const colors = [
+        "#91e632",
+        "#64a83d",
+        "#0b4a26",
+        "#a9d98a"
+      ];
+
+
+      for (
+        let i = 0;
+        i < 12;
+        i++
+      ) {
+
+        const leaf =
+          document.createElement(
+            "div"
+          );
+
+
+        leaf.className =
+          "leaf";
+
+
+        const size =
+          16 +
+          Math.random() * 18;
+
+
+        leaf.style.width =
+          size + "px";
+
+
+        leaf.style.height =
+          size + "px";
+
+
+        leaf.style.left =
+          Math.random() *
+          100 +
+          "vw";
+
+
+        leaf.style.animationDuration =
+          (
+            15 +
+            Math.random() *
+            12
+          ) +
+          "s";
+
+
+        leaf.style.animationDelay =
+          (
+            -Math.random() *
+            22
+          ) +
+          "s";
+
+
+        const color =
+          colors[
+            i %
+            colors.length
+          ];
+
+
+        leaf.innerHTML =
+          '<svg viewBox="0 0 24 24">' +
+
+          '<path ' +
+          'd="M12 2C6 6 4 12 6 18c2 3 4 4 6 4s4-1 6-4c2-6 0-12-6-16z" ' +
+          'fill="' +
+          color +
+          '"/>' +
+
+          '<path ' +
+          'd="M12 4v18" ' +
+          'stroke="#ffffff" ' +
+          'stroke-width=".8" ' +
+          'opacity=".6"/>' +
+
+          '</svg>';
+
+
+        container.appendChild(
+          leaf
+        );
+
+      }
+
+    })();
+
+
+    /* YEAR */
+
+    document.getElementById(
+      "year"
+    ).textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
