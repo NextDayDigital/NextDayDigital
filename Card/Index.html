@@ -1,182 +1,700 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Luciano Alfano - NextDay Digital</title>
-<meta name="description" content="Luciano Alfano, Web Design and Development at NextDay Digital. Contact info, your website demo, and ready-made website themes.">
-<meta name="theme-color" content="#06371b">
-<link rel="icon" href="/favicon.ico">
-<style>
-:root{--green:#06371b;--green-2:#0b4a26;--lime:#91e632;--lime-soft:#eaf8d9;--ink:#10231a;--gray:#5b6660;--line:#e3eadf;--bg:#f7faf4;--white:#ffffff}
-*{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
-body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);min-height:100vh;overflow-x:hidden}
-.leaves{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.leaf{position:absolute;top:-60px;opacity:.22;animation:fall linear infinite}
-.leaf svg{width:100%;height:100%;display:block}
-@keyframes fall{0%{transform:translate(0,-60px) rotate(0deg)}50%{transform:translate(40px,50vh) rotate(160deg)}100%{transform:translate(-20px,110vh) rotate(320deg)}}
-@media (prefers-reduced-motion:reduce){.leaves{display:none}}
-.wrap{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:28px 18px 48px}
-.hero{background:linear-gradient(160deg,var(--green),var(--green-2));color:var(--white);border-radius:24px;padding:30px 24px 26px;text-align:center;box-shadow:0 18px 40px rgba(6,55,27,.25);position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(145,230,50,.28),transparent 70%);pointer-events:none;z-index:0}
-.hero>*{position:relative;z-index:1}
-.brand{font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.9;margin-bottom:22px}
-.brand .dot{color:var(--lime)}
-.avatar{width:118px;height:118px;border-radius:50%;margin:0 auto 16px;border:4px solid var(--lime);background:var(--green-2);display:grid;place-items:center;overflow:hidden;position:relative;box-shadow:0 0 0 6px rgba(145,230,50,.15)}
-.avatar .initials{font-size:40px;font-weight:800;color:var(--lime)}
-.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-h1{font-size:28px;line-height:1.15;font-weight:800}
-.role{color:#cfe8c0;margin-top:6px;font-size:15px}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
-.btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 14px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
-.btn:active{transform:scale(.98)}
-.btn-lime{background:var(--lime);color:var(--green)}
-.btn-ghost{background:rgba(255,255,255,.1);color:var(--white);border:1px solid rgba(255,255,255,.25)}
-.btn-full{grid-column:1/-1}
-.btn svg{width:18px;height:18px;flex:none}
-.panel{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:22px 20px;margin-top:16px;box-shadow:0 6px 20px rgba(6,55,27,.06)}
-.panel h2{font-size:19px;color:var(--green);margin-bottom:4px}
-.sub{color:var(--gray);font-size:14.5px;line-height:1.45;margin-bottom:14px}
-.contact-list{list-style:none}
-.contact-list li+li{border-top:1px solid var(--line)}
-.contact-list a{display:flex;align-items:center;gap:14px;padding:13px 2px;color:var(--ink);text-decoration:none;font-size:15.5px}
-.ic{width:38px;height:38px;border-radius:10px;background:var(--lime-soft);display:grid;place-items:center;flex:none}
-.ic svg{width:19px;height:19px;stroke:var(--green)}
-.lbl{display:block;font-size:12px;color:var(--gray);text-transform:uppercase;letter-spacing:.06em}
-.val{font-weight:600;word-break:break-word}
-.search{position:relative;display:block}
-.search input{-webkit-appearance:none;appearance:none;width:100%;padding:14px 16px 14px 44px;font-size:16px;font-family:inherit;border:2px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);outline:none}
-.search input:focus{border-color:var(--lime);background:var(--white)}
-.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:19px;height:19px;stroke:var(--gray);pointer-events:none}
-.results{margin-top:12px;display:grid;gap:8px}
-.result{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;border-radius:12px;background:var(--lime-soft);color:var(--green);text-decoration:none;font-weight:700;border:1px solid #d3efb3}
-.result small{display:block;font-weight:500;color:var(--gray);font-size:13px}
-.empty{padding:14px;border-radius:12px;background:var(--bg);border:1px dashed #cdd8c6;color:var(--gray);font-size:14.5px;line-height:1.45}
-.empty strong{color:var(--ink)}
-.empty a{color:var(--green);font-weight:700}
-.cta{background:linear-gradient(135deg,var(--lime-soft),#f6fdee);border:1px solid #d3efb3}
-.cta .btn{width:100%;background:var(--green);color:var(--white)}
-footer{text-align:center;color:var(--gray);font-size:13px;margin-top:26px}
-footer a{color:var(--green);font-weight:600;text-decoration:none}
-</style>
-</head>
-<body>
-<div class="leaves" id="leaves" aria-hidden="true"></div>
-<main class="wrap">
-<section class="hero">
-<div class="brand">NextDay<span class="dot">.</span> Digital</div>
-<div class="avatar">
-<span class="initials" aria-hidden="true">LA</span>
-<img src="/assets/luciano.jpg" alt="Luciano Alfano" onerror="this.remove()">
-</div>
-<h1>Luciano Alfano</h1>
-<p class="role">Web Design &amp; Development</p>
-<div class="actions">
-<a class="btn btn-lime" href="tel:+17328561662">Call</a>
-<a class="btn btn-ghost" href="sms:+17328561662">Text</a>
-<a class="btn btn-ghost btn-full" href="/card/luciano-alfano.vcf">Save Contact</a>
-</div>
-</section>
 
-<section class="panel">
-<ul class="contact-list">
-<li><a href="tel:+17328561662"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span><span class="lbl">Phone</span><span class="val">(732) 856-1662</span></span></a></li>
-<li><a href="mailto:lalfanodesign@gmail.com?subject=Website%20for%20my%20business"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span><span><span class="lbl">Email</span><span class="val">lalfanodesign@gmail.com</span></span></a></li>
-<li><a href="https://nextdaydigital.org/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span><span class="lbl">Website</span><span class="val">nextdaydigital.org</span></span></a></li>
-</ul>
-</section>
 
-<section class="panel">
-<h2>Find your website demo</h2>
-<p class="sub">Already talked with me? Search your business name to see the demo I built for you.</p>
-<label class="search">
-<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-<input id="q" type="search" placeholder="Search your business name..." autocomplete="off" aria-label="Search your business name">
-</label>
-<div class="results" id="results" aria-live="polite"></div>
-</section>
+  
+  
 
-<section class="panel cta">
-<h2>Don't see your business?</h2>
-<p class="sub">Browse ready-made website designs and pick one that fits your business. I'll make it yours.</p>
-<a class="btn" href="https://nextdaydigital.org/themes.html#grid">Browse Website Themes &rarr;</a>
-</section>
+  Luciano Alfano | NextDay Digital
 
-<footer>&copy; <span id="yr"></span> <a href="https://nextdaydigital.org/">NextDay Digital</a> &middot; Conway, SC</footer>
-</main>
+  
 
-<script>
-/* YOUR DEMOS: remove the // to turn a line on, and put the real page address in url */
-var DEMOS = [
-  // { name: "OD Taco Co.", url: "/your-demo-page.html", keywords: "tacos mexican restaurant" },
-  // { name: "River Town Tavern", url: "/your-demo-page.html", keywords: "bar pub restaurant" },
-  // { name: "Poppie's Downtown Sweet Bar", url: "/your-demo-page.html", keywords: "dessert ice cream sweets" },
-];
+  
 
-function norm(s) {
-  return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9 ]/g, "").replace(/\s+/g, " ").trim();
-}
+  
 
-var qEl = document.getElementById("q");
-var resEl = document.getElementById("results");
+  
+    :root {
+      --green: #06371b;
+      --green2: #0b4a26;
+      --lime: #91e632;
+      --lime-soft: #eaf8d9;
+      --ink: #10231a;
+      --gray: #5b6660;
+      --line: #e3eadf;
+      --background: #f7faf4;
+      --white: #ffffff;
+    }
 
-function render() {
-  var q = norm(qEl.value);
-  resEl.innerHTML = "";
-  if (!q) return;
-  var words = q.split(" ");
-  var hits = DEMOS.filter(function (d) {
-    var hay = norm(d.name + " " + (d.keywords || ""));
-    return words.every(function (w) { return hay.indexOf(w) !== -1; });
-  });
-  if (hits.length) {
-    hits.forEach(function (d) {
-      var a = document.createElement("a");
-      a.className = "result";
-      a.href = d.url;
-      var left = document.createElement("span");
-      left.textContent = d.name;
-      var small = document.createElement("small");
-      small.textContent = "View your website demo";
-      left.appendChild(small);
-      var arrow = document.createElement("span");
-      arrow.textContent = "\u2192";
-      a.appendChild(left);
-      a.appendChild(arrow);
-      resEl.appendChild(a);
-    });
-  } else {
-    var div = document.createElement("div");
-    div.className = "empty";
-    div.innerHTML = "<strong>No demo found yet.</strong> Browse the themes below, or call or text me at <a href=\"tel:+17328561662\">(732) 856-1662</a> and I'll build one for you.";
-    resEl.appendChild(div);
-  }
-}
-qEl.addEventListener("input", render);
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-var startQ = new URLSearchParams(location.search).get("q");
-if (startQ) { qEl.value = startQ; render(); }
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
 
-(function () {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  var box = document.getElementById("leaves");
-  var colors = ["#91e632", "#5fa83a", "#0b4a26", "#a9d98a"];
-  for (var i = 0; i < 12; i++) {
-    var el = document.createElement("div");
-    el.className = "leaf";
-    var size = 16 + Math.random() * 18;
-    el.style.width = size + "px";
-    el.style.height = size + "px";
-    el.style.left = Math.random() * 100 + "vw";
-    el.style.animationDuration = (14 + Math.random() * 12) + "s";
-    el.style.animationDelay = (-Math.random() * 20) + "s";
-    el.innerHTML = "<svg viewBox=\"0 0 24 24\"><path d=\"M12 2C6 6 4 12 6 18c2 3 4 4 6 4s4-1 6-4c2-6 0-12-6-16z\" fill=\"" + colors[i % colors.length] + "\"/><path d=\"M12 4v18\" stroke=\"#fff\" stroke-width=\".8\" opacity=\".6\"/></svg>";
-    box.appendChild(el);
-  }
-})();
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
 
-document.getElementById("yr").textContent = new Date().getFullYear();
-</script>
-</body>
-</html>
+      font-family:
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      color: var(--ink);
+      background: var(--background);
+    }
+
+    /* ---------------------------
+       Falling leaves
+    --------------------------- */
+
+    .leaves {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .leaf {
+      position: absolute;
+      top: -60px;
+      opacity: 0.20;
+      animation: leafFall linear infinite;
+    }
+
+    .leaf svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    @keyframes leafFall {
+      0% {
+        transform:
+          translate(0, -60px)
+          rotate(0deg);
+      }
+
+      50% {
+        transform:
+          translate(40px, 50vh)
+          rotate(160deg);
+      }
+
+      100% {
+        transform:
+          translate(-20px, 110vh)
+          rotate(320deg);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .leaves {
+        display: none;
+      }
+    }
+
+    /* ---------------------------
+       Main layout
+    --------------------------- */
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+
+      width: 100%;
+      max-width: 480px;
+
+      margin: 0 auto;
+      padding: 28px 18px 48px;
+    }
+
+    /* ---------------------------
+       Profile / hero
+    --------------------------- */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+
+      padding: 30px 24px 26px;
+
+      text-align: center;
+      color: white;
+
+      background:
+        linear-gradient(
+          160deg,
+          var(--green) 0%,
+          var(--green2) 100%
+        );
+
+      border-radius: 24px;
+
+      box-shadow:
+        0 18px 40px
+        rgba(6, 55, 27, 0.24);
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      z-index: 0;
+
+      width: 190px;
+      height: 190px;
+
+      top: -70px;
+      right: -65px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(145, 230, 50, 0.27),
+          transparent 70%
+        );
+
+      pointer-events: none;
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand {
+      margin-bottom: 22px;
+
+      font-size: 14px;
+      font-weight: 800;
+
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+      opacity: 0.92;
+    }
+
+    .brand-dot {
+      color: var(--lime);
+    }
+
+    /* ---------------------------
+       Profile photo
+    --------------------------- */
+
+    .avatar {
+      position: relative;
+
+      display: grid;
+      place-items: center;
+
+      width: 120px;
+      height: 120px;
+
+      margin: 0 auto 17px;
+
+      overflow: hidden;
+
+      color: var(--lime);
+
+      background: var(--green2);
+
+      border: 4px solid var(--lime);
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 0 6px
+        rgba(145, 230, 50, 0.14);
+    }
+
+    .avatar-fallback {
+      font-size: 40px;
+      font-weight: 800;
+    }
+
+    .avatar img {
+      position: absolute;
+      inset: 0;
+
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+    }
+
+    h1 {
+      font-size: 29px;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .role {
+      margin-top: 6px;
+
+      color: #cfe8c0;
+
+      font-size: 15px;
+    }
+
+    /* ---------------------------
+       Buttons
+    --------------------------- */
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10px;
+
+      margin-top: 22px;
+    }
+
+    .button {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
+      min-height: 47px;
+
+      padding: 12px 14px;
+
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      border: 0;
+      border-radius: 12px;
+
+      cursor: pointer;
+    }
+
+    .button:active {
+      transform: scale(0.98);
+    }
+
+    .button-primary {
+      color: var(--green);
+      background: var(--lime);
+    }
+
+    .button-secondary {
+      color: white;
+
+      background:
+        rgba(255, 255, 255, 0.10);
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.25);
+    }
+
+    .button-full {
+      grid-column: 1 / -1;
+    }
+
+    /* ---------------------------
+       Panels
+    --------------------------- */
+
+    .panel {
+      padding: 22px 20px;
+
+      margin-top: 16px;
+
+      background: white;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 6px 20px
+        rgba(6, 55, 27, 0.06);
+    }
+
+    .panel h2 {
+      margin-bottom: 5px;
+
+      color: var(--green);
+
+      font-size: 20px;
+    }
+
+    .panel-description {
+      margin-bottom: 15px;
+
+      color: var(--gray);
+
+      font-size: 14.5px;
+      line-height: 1.5;
+    }
+
+    /* ---------------------------
+       Contact information
+    --------------------------- */
+
+    .contact-list {
+      list-style: none;
+    }
+
+    .contact-list li + li {
+      border-top:
+        1px solid
+        var(--line);
+    }
+
+    .contact-list a {
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      padding: 13px 2px;
+
+      color: var(--ink);
+
+      font-size: 15.5px;
+
+      text-decoration: none;
+    }
+
+    .contact-icon {
+      display: grid;
+      place-items: center;
+
+      flex: 0 0 auto;
+
+      width: 38px;
+      height: 38px;
+
+      color: var(--green);
+
+      font-weight: 800;
+
+      background: var(--lime-soft);
+
+      border-radius: 10px;
+    }
+
+    .contact-label {
+      display: block;
+
+      margin-bottom: 2px;
+
+      color: var(--gray);
+
+      font-size: 11px;
+
+      letter-spacing: 0.07em;
+
+      text-transform: uppercase;
+    }
+
+    .contact-value {
+      font-weight: 650;
+      word-break: break-word;
+    }
+
+    /* ---------------------------
+       Search
+    --------------------------- */
+
+    .search-box {
+      position: relative;
+      display: block;
+    }
+
+    .search-box input {
+      width: 100%;
+
+      padding:
+        14px
+        16px
+        14px
+        44px;
+
+      color: var(--ink);
+
+      font-family: inherit;
+      font-size: 16px;
+
+      background: var(--background);
+
+      border:
+        2px solid
+        var(--line);
+
+      border-radius: 12px;
+
+      outline: none;
+
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .search-box input:focus {
+      background: white;
+      border-color: var(--lime);
+    }
+
+    .search-icon {
+      position: absolute;
+
+      top: 50%;
+      left: 15px;
+
+      transform:
+        translateY(-50%);
+
+      color: var(--gray);
+
+      font-size: 18px;
+
+      pointer-events: none;
+    }
+
+    .results {
+      display: grid;
+
+      gap: 8px;
+
+      margin-top: 12px;
+    }
+
+    .result {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 12px;
+
+      padding: 13px 14px;
+
+      color: var(--green);
+
+      font-weight: 750;
+
+      text-decoration: none;
+
+      background: var(--lime-soft);
+
+      border:
+        1px solid
+        #d3efb3;
+
+      border-radius: 12px;
+    }
+
+    .result small {
+      display: block;
+
+      margin-top: 2px;
+
+      color: var(--gray);
+
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .result-arrow {
+      font-size: 20px;
+    }
+
+    .no-result {
+      padding: 14px;
+
+      color: var(--gray);
+
+      font-size: 14.5px;
+      line-height: 1.5;
+
+      background: var(--background);
+
+      border:
+        1px dashed
+        #cdd8c6;
+
+      border-radius: 12px;
+    }
+
+    .no-result strong {
+      color: var(--ink);
+    }
+
+    .no-result a {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* ---------------------------
+       Themes CTA
+    --------------------------- */
+
+    .themes-panel {
+      background:
+        linear-gradient(
+          135deg,
+          var(--lime-soft),
+          #f6fdee
+        );
+
+      border-color: #d3efb3;
+    }
+
+    .themes-button {
+      width: 100%;
+
+      color: white;
+
+      background: var(--green);
+    }
+
+    /* ---------------------------
+       Footer
+    --------------------------- */
+
+    footer {
+      margin-top: 26px;
+
+      color: var(--gray);
+
+      font-size: 13px;
+
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--green);
+
+      font-weight: 650;
+
+      text-decoration: none;
+    }
+
+    /* ---------------------------
+       Small phones
+    --------------------------- */
+
+    @media (max-width: 360px) {
+      .wrap {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .hero {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .contact-value {
+        font-size: 14px;
+      }
+    }
+  
+
+
+
+
+  
+  
+
+  
+
+    <!-- PROFILE -->
+    
+
+      
+        NextDay. Digital
+      
+
+      
+
+        
+          LA
+        
+
+        
+      
+
+      Luciano Alfano
+
+      
+        Web Design & Development
+      
+
+      
+
+        
+          Call
+        
+
+        
+          Text
+        
+
+        
+          Save Contact
+        
+
+      
+
+    
+
+
+    <!-- CONTACT INFO -->
+    
+
+      
+
+        
+          
+
+            
+              ☎
+            
+
+            
+              
+                Phone
+              
+
+              
+                (732) 856-1662
+              
+            
+
+          
+        
+
+        
+          <a
+            href="mailto:lalfanodesign@gmail.com?subject=Website%20for%20my%
