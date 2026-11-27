@@ -124,6 +124,7 @@
   .search-box input:focus{background:var(--white);border-color:var(--teal-bright)}
   .search-box svg{position:absolute;top:50%;left:15px;width:19px;height:19px;transform:translateY(-50%);stroke:var(--gray);pointer-events:none}
   .results{display:grid;gap:8px;margin-top:12px}
+  .results:empty{display:none}
   .result{
     display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;color:var(--teal-dark);
     font-weight:750;text-decoration:none;background:var(--teal-soft);border:1px solid #bfe2e2;border-radius:12px;
@@ -222,7 +223,7 @@
   <!-- DEMO SEARCH -->
   <section class="panel">
     <h2>Find your website demo</h2>
-    <p class="description">Already talked with me? Search your business name to see if I've built a custom demo for you.</p>
+    <p class="description">Already talked with me? Search your business name or town to see the demo I built for you.</p>
     <label class="search-box">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
       <input id="businessSearch" type="search" placeholder="Search your business name..." autocomplete="off" enterkeyhint="search" aria-label="Search your business name">
@@ -246,17 +247,24 @@
 <script>
 /* ==========================================
    BUSINESS DEMOS
-   Add one entry per demo. Delete the comment markers around the examples to turn them on.
-   name     = business name people will search
-   url      = link to the demo page
-   keywords = optional extra search words
+   These stay hidden until someone types in the search box.
+   To add one, copy a line and change the name, location and url.
    ========================================== */
 var DEMOS = [
-  /*
-  { name: "OD Taco Co.",       url: "/YOUR-REAL-DEMO.html", keywords: "taco tacos mexican restaurant" },
-  { name: "River Town Tavern", url: "/YOUR-REAL-DEMO.html", keywords: "restaurant tavern bar pub" },
-  { name: "Poppie's Downtown", url: "/YOUR-REAL-DEMO.html", keywords: "restaurant downtown" }
-  */
+  { name: "Johnson's Discount Tire",   location: "Conway, SC",             url: "https://johnsondiscounttire.com/",                 keywords: "tires tire shop auto" },
+  { name: "OD Taco Co.",               location: "North Myrtle Beach, SC", url: "https://odtacoco.github.io/",                      keywords: "tacos mexican restaurant nmb" },
+  { name: "Taco Libre Cantina",        location: "North Myrtle Beach, SC", url: "https://tacolibrecantina.github.io/",              keywords: "tacos mexican restaurant nmb" },
+  { name: "A Cup Full Cafe",           location: "Conway, SC",             url: "https://a-cup-full-cafe.github.io/",               keywords: "cafe coffee restaurant cupfull" },
+  { name: "Bully's Pub",               location: "North Myrtle Beach, SC", url: "https://bullyspub.github.io/",                     keywords: "pub bar restaurant nmb bullys" },
+  { name: "Certified Automotive",      location: "Longs, SC",              url: "https://certified-auto843.github.io/",             keywords: "auto repair mechanic car" },
+  { name: "Dirty South Soda Co.",      location: "Myrtle Beach, SC",       url: "https://dirty-south-soda-co.github.io/",           keywords: "soda drinks" },
+  { name: "Dragon Pan",                location: "Myrtle Beach, SC",       url: "https://dragonpanmb.github.io/",                   keywords: "asian chinese restaurant" },
+  { name: "Jersey Bagels",             location: "Myrtle Beach, SC",       url: "https://jersey-bagels.github.io/",                 keywords: "bagels breakfast bakery" },
+  { name: "KT and Sons Transmissions", location: "Longs, SC",              url: "https://kt-and-sons-transmissions.github.io/",     keywords: "transmission auto repair kt & sons" },
+  { name: "Player's Choice",           location: "North Myrtle Beach, SC", url: "https://playerschoicenmb.github.io/",              keywords: "players choice nmb" },
+  { name: "Poppie's Downtown",         location: "Loris, SC",              url: "https://poppiesdowntown.github.io/",               keywords: "restaurant poppies" },
+  { name: "River Town Tavern",         location: "Conway, SC",             url: "https://rivertowntavern.github.io/",               keywords: "tavern bar pub restaurant rivertown" },
+  { name: "TK Performance",            location: "Myrtle Beach, SC",       url: "https://tk-performance.github.io/",                keywords: "auto performance car" }
 ];
 
 var searchInput = document.getElementById("businessSearch");
@@ -265,18 +273,20 @@ var searchResults = document.getElementById("searchResults");
 function normalizeText(text) {
   return (text || "").toLowerCase()
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9 ]/g, "").replace(/\s+/g, " ").trim();
+    .replace(/[\u2018\u2019']/g, "")
+    .replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
 }
 
 function searchDemos() {
   var query = normalizeText(searchInput.value);
   searchResults.innerHTML = "";
-  if (!query) return;
+  if (!query) return;   /* nothing shows until they type */
 
   var words = query.split(" ");
   var matches = DEMOS.filter(function (demo) {
-    var searchable = normalizeText(demo.name + " " + (demo.keywords || ""));
-    return words.every(function (w) { return searchable.indexOf(w) !== -1; });
+    var searchable = normalizeText(demo.name + " " + demo.location + " " + (demo.keywords || ""));
+    var compact = searchable.replace(/ /g, "");
+    return words.every(function (w) { return searchable.indexOf(w) !== -1 || compact.indexOf(w) !== -1; });
   });
 
   if (matches.length) {
@@ -288,7 +298,7 @@ function searchDemos() {
       var text = document.createElement("span");
       text.textContent = demo.name;
       var small = document.createElement("small");
-      small.textContent = "View your website demo";
+      small.textContent = demo.location + " \u00B7 View website demo";
       text.appendChild(small);
 
       var arrow = document.createElement("span");
